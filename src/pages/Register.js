@@ -1,18 +1,21 @@
 import React from 'react'
 import AuthItem from '../components/auth/AuthItem'
+import RegisterForm from '../components/auth/RegisterForm'
 
 
 
 function RegisterPage() {
   return (
-    <AuthItem>
-      <span>
+    <div className='bg-black vh-100'>
+    <AuthItem >
+    
 
-        RegisterPage
-      </span>
+      <RegisterForm/>
+    
 
       
     </AuthItem>
+    </div>
   )
 }
 

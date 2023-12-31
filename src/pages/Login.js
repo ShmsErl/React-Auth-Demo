@@ -1,15 +1,17 @@
 import React from 'react'
-import auth from '../components/auth/AuthItem'
 import AuthItem from '../components/auth/AuthItem'
+import LoginForm from '../components/auth/LoginForm'
 
 
 function LoginPage() {
   return (
+    <div className='vh-100 bg-black'>
     <AuthItem>
 
-       <span> LoginPage </span> 
+       <LoginForm/>
 
     </AuthItem>
+    </div>
   )
 }
 
