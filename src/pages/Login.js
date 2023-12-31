@@ -1,8 +1,15 @@
 import React from 'react'
+import auth from '../components/auth/AuthItem'
+import AuthItem from '../components/auth/AuthItem'
+
 
 function LoginPage() {
   return (
-    <div>LoginPage</div>
+    <AuthItem>
+
+       <span> LoginPage </span> 
+
+    </AuthItem>
   )
 }
 

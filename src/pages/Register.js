@@ -1,8 +1,18 @@
 import React from 'react'
+import AuthItem from '../components/auth/AuthItem'
+
+
 
 function RegisterPage() {
   return (
-    <div>RegisterPage</div>
+    <AuthItem>
+      <span>
+
+        RegisterPage
+      </span>
+
+      
+    </AuthItem>
   )
 }
 
