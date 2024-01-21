@@ -6,11 +6,13 @@ import { Form, useNavigate } from 'react-router-dom';
 import { object, string } from 'yup'
 
 function RegisterhtmlForm() {
+  
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState([])
   const navigation = useNavigate()
   const payload = {
     firstName: firstName,
@@ -24,12 +26,28 @@ function RegisterhtmlForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    try {
-      await axios.post("http://localhost:8080/api/v1/signup", payload)
-      navigation("/login")
-    } catch (error) {
+   
+      await axios.post("http://localhost:8080/api/signup", payload)
+      .then(response =>{
+        alert("Kayıt Başarılı")
+        navigation("/login")
+      })
+         
+      .catch(error => console.log(error))
+       
+       
+      
+       
+        //errors.map((err)=>console.log(err)) 
+          
+          
+     
+       
+       
+   
+      
 
-    }
+   
 
 
   }
@@ -62,6 +80,7 @@ function RegisterhtmlForm() {
       
         <form onSubmit={(e)=> handleSubmit(e)} className='w-100'>
           <h1 className='h3 text-center text-warning'>Register Page</h1>
+          
           <div className="row  my-3">
             <label className='text-warning my-2' htmlFor="firstname">First Name</label>
             <input type="text" className="form-control " name='firstname' aria-describedby="emailHelp" onChange={(e) => setFirstName(e.target.value)} placeholder="Enter First Name" />
@@ -89,6 +108,7 @@ function RegisterhtmlForm() {
           <div className='d-flex flex-column'>
             <button type="submit" className="btn btn-warning my-2 px-5 align-self-center">Submit</button>
           </div>
+          <span id="alert"className='text-danger'></span>
 
 
 
